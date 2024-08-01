@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head', {title:'Dash-Providers'}) %>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://kit.fontawesome.com/27a2ff0d1a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <script>
+        const logOut = () => {
+            sessionStorage.clear();
+            window.location.href= "/"
+        };
+    </script>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2">
+                <%- include('./partials/header-dash') %>
+            </div>
+            <div class="col-sm-10 contentDelete">
+                <div class="container mt-4">
+                    <div class="row">
+                        <span class="col-10 title-user">Lista de Proveedores</span>
+                        <div class="col-2 p-1 sidebar-item"><i class="sidebar-icon bi bi-person-circle"></i> <span
+                                style="margin-left: 10px;">Emmanuel</span></div>
+                    </div>
+                    <div class="search-and-add">
+                        <!-- Barra de búsqueda -->
+                        <!-- <div class="search-bar">
+                            <div class="input-group">
+                                <input type="search" class="form-control rounded-pill alert-dark browse"
+                                    aria-label="Buscar usuario" placeholder="Buscar por email"><i class="bi bi-search"></i>
+                            </div>
+                        </div> -->
+                        <!-- Botón de agregar usuario -->
+                        <button class="btn btn-warning add-user-btn" style="color:#fff;" type="button"
+                            data-bs-toggle="modal" data-bs-target="#exampleAddUserModal"><i
+                                class="bi bi-plus"></i></button>
+                    </div>
+                </div>
+                <div class="modal fade" id="exampleAddUserModal" tabindex="-1"
+                    aria-labelledby="exampleEditUserModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="modal-title fs-5" id="exampleEditUserModalLabel">Agregar Usuarios</h3>
+                                <button type="button" class="btn btn-outline-dark bi-x btn-close-modal"
+                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="nombreEdit" class="col-form-label">Nombre</label>
+                                        <input type="text" class="form-control alert-dark rounded nombre"
+                                            id="nombreEdit">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="celularEdit" class="col-form-label">Direccion</label>
+                                        <input type="text" class="form-control alert-dark rounded direccion"
+                                            id="celularEdit">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="cedulaEdit" class="col-form-label">Telefono</label>
+                                        <input type="number" class="form-control alert-dark rounded telefono"
+                                            id="cedulaEdit">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="cedulaEdit" class="col-form-label">Correo</label>
+                                        <input type="text" class="form-control alert-dark rounded correo"
+                                            id="cedulaEdit">
+                                    </div>
+                                </form>
+                                <div style="text-align: center;">
+                                    <button type="button" class="btn btn-warning btn-save">Guardar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal Editar Usuario -->
+                <div class="modal fade" id="exampleEditUserModal" tabindex="-1"
+                    aria-labelledby="exampleEditUserModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="modal-title fs-5" id="exampleEditUserModalLabel">Editar Proveedor</h3>
+                                <button type="button" class="btn btn-outline-dark bi-x btn-close-modal"
+                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="nombreEdit" class="col-form-label">Nombre</label>
+                                        <input type="text" class="form-control alert-dark rounded nombreEdit"
+                                            id="nombreEdit">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="celularEdit" class="col-form-label">Direccion</label>
+                                        <input type="text" class="form-control alert-dark rounded direccionEdit"
+                                            id="celularEdit">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="cedulaEdit" class="col-form-label">Telefono</label>
+                                        <input type="number" class="form-control alert-dark rounded telefonoEdit"
+                                            id="cedulaEdit">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="cedulaEdit" class="col-form-label">Correo</label>
+                                        <input type="text" class="form-control alert-dark rounded correoEdit"
+                                            id="cedulaEdit">
+                                    </div>
+                                </form>
+                                <div style="text-align: center;">
+                                    <button type="button" class="btn btn-warning btn-save-edit"
+                                        data-bs-dismiss="modal">Guardar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content" style="width: fit-content;">
+                            <div class="modal-header" style="align-self: center;padding-bottom:20px">
+                                <h5 class="modal-title fs-5" id="staticBackdropLabel">Historial de Pedidos
+                                </h5>
+                                <button type="button" class=" btn btn-outline-dark bi-x btn-close-modal"
+                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div style="text-align: center;padding-bottom: 20px;">
+                                <table class="table table bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Cantidad</th>
+                                            <th scope="col">Direccion</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="info">
+                                            
+                                    </tbody>
+                                    </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal Eliminar Usuario -->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header" style="align-self: center;padding-bottom:20px">
+                                <h5 class="modal-title fs-5" id="staticBackdropLabel">¿Deseas eliminar a "Esneider"?
+                                </h5>
+                            </div>
+                            <div style="text-align: center;padding-bottom: 20px;">
+                                <button type="button" class="btn btn-warning accept" data-bs-dismiss="modal"
+                                    style="color:white">Aceptar</button>
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Rechazar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <table class="table table bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Direccion</th>
+                                <th scope="col">Telefono</th>
+                                <th scope="col">Correo</th>
+                                <th scope="col">Accion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% providers.forEach(provider=> { %>
+                                <tr class="user-list-item" data-id=`<%=provider.ID_Proveedor %>`>
+                                    <td class="id">
+                                        <%= provider.ID_Proveedor %>
+                                    </td>
+                                    <td class="nombre">
+                                        <%= provider.Nombre %>
+                                    </td>
+                                    <td class="celular">
+                                        <%= provider.Direccion %>
+                                    </td>
+                                    <td class="cedula">
+                                        <%= provider.Telefono %>
+                                    </td>
+                                    <td class="cedula">
+                                        <%= provider.Correo %>
+                                    </td>
+                                    <td>
+                                        <div class="rounded icon-button">
+                                            <button class="btn btn-warning edit-user-btn" type="button"
+                                                data-bs-toggle="modal" data-bs-target="#exampleEditUserModal">
+                                                <i class="sidebar-icon bi bi-pencil-fill"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="rounded icon-button ms-1 remove">
+                                            <button type="button" class="btn btn-info info-user-btn">
+                                                <i class="fa-regular fa-file" style="background-image: url(/img/file-regular.svg);"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <% }); %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/admin/providers.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+    <%- include('./partials/scripts') %>
+</body>
+
+</html>

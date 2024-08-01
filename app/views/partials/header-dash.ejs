@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand-lg bg-body-primary h-100" style="height: 100px;">
+    <div class="container-fluid flex-column menu h-100 p-0 m-0">
+        <a class="navbar-brand mt-5" href="/dashboard">Tartaro</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="offcanvas offcanvas-start mt-5" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <a class="navbar-brand" href="#">Tartaro</a>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav flex-column justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" aria-current="page" href="/dashboard/users"><i
+                                class="bi bi-person"></i> Usuarios</a>
+                    </li>
+                    <br>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="/dashboard/products"><i
+                                class="bi bi-box2-heart"></i> Productos</a>
+                    </li>
+                    <br>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="/dashboard/detailsOrders"><i
+                                class="bi bi-clipboard2-data"></i> Reportes</a>
+                    </li>
+                    <br>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="/dashboard/orders"><i
+                                class="bi bi-backpack4"></i> Pedidos</a>
+                    </li>
+                    <br>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="/dashboard/dealers"><i
+                                class="bi bi-bicycle"></i> Repartidores</a>
+                    </li>
+                    <br>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="/dashboard/backup"><i
+                                class="bi bi-hdd-stack"></i> Copia de Seguridad</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="/dashboard/categories"><i class="bi bi-tags"></i>Categorias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="/dashboard/providers"><i class="bi bi-person-lines-fill"></i> Proveedores</a>
+                    </li>
+                    <br>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="/dashboard/gestion"><i class="bi bi-book-half"></i> Gestionar
+                            contenido</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="offcanvas-footer mt-auto p-2" onclick="logOut()">
+                <h5 p-2><a class="nav-link text-dark m-3 "><i
+                            class="bi bi-box-arrow-left"></i> Finalizar Sesion</a></h5>
+            </div>
+        </div>
+    </div>
+</nav>

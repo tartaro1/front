@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+    /* Estilos personalizados */
+    .navbar-nav .nav-link {
+      margin-left: 50px; 
+    }
+    .navbar-brand {
+        font-family: 'Lemon';
+        color: #F86913;
+        font-size: 30px;
+    }
+    .Iniciar {
+        background-color: #F86913;
+        color: white;
+        border: 1px solid #F86913;
+        border-radius: 50px;
+        width: 150px;
+    }
+    .Iniciar:hover {
+        background-color: #F86913;
+        color: white;
+        border: 1px solid #F86913;
+    }
+    .carrito {
+        width: 40px;
+        height: 40px;
+    }
+/* *{
+    font-family: 'Raleway', sans-serif;
+} */
+
+.container-fluid {
+    width: 100%;
+}
+.add {
+    width: 80%;
+    height: 50vh;
+    background-image: url(https://www.shutterstock.com/shutterstock/photos/2216004535/display_1500/stock-photo-poznan-pol-jun-advertisement-billboard-displaying-logo-of-mondelez-international-a-2216004535.jpg);
+    background-size:contain  ;
+    border-radius: 20px;
+}
+.menu > .col-md-3 {
+    width: 180px;
+    height: 30px;
+    border-radius: 30px;
+    border: 1px solid #FE6C00;
+    background: #DADADA;
+}
+.row {
+    height: 100%;
+    margin-top: 1px;
+}
+.row > .col-md-3 {
+    width: 180px;
+}
+.card-img-top {
+    width: 200px;
+    height: 200px;
+}
+.card {
+    border-radius: 20px;
+
+}
+
+.barra {
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.25);
+
+}
+.Buscar {
+    border-radius: 40px;
+}
+.aside {
+    background: none;
+    border: none;
+}
+.rango {
+    width: 80px;
+}
+.pringles-image {
+    width: 300px;
+    height: 200px; /* Ajusta el tamaño de la imagen */
+}
+.btns {
+    margin-top: -60px;
+}
+.agregar {
+    background: #FE6C00;
+    border: none;
+    border-radius: 10px;
+    width: 135px;
+}
+.mas, .menos {
+    border-radius: 15px;
+}
+.menos {
+    background: #FF0000;
+    border: none;
+}
+.mas {
+    background: #FE6C00;
+    border: none;
+}

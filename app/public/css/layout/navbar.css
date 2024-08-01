@@ -1,0 +1,165 @@
+
+.navbar {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+}
+
+
+.nav-main,
+.nav-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-main{
+    padding: 2vh 0;
+}
+.nav-main img {
+    max-width: 30%;
+}
+
+.nav-main form input {
+    padding: 1.2vh;
+    border: none;
+    border-radius: 3vh;
+}
+
+
+.nav-main ul,
+.nav-center ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-main ul li,
+.nav-center ul li {
+    position: relative;
+}
+
+.nav-main ul li a,
+.nav-center ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+.nav-main ul li a:hover,
+.nav-center ul li a:hover {
+    background-color: var(--low-primary-color);
+    border-radius: 5px;
+}
+
+.nav-main ul li:nth-child(3) {
+    display: none;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    padding: 10px 0;
+    min-width: 200px;
+    z-index: 1000;
+    display: none;
+}
+
+
+.dropdown li a {
+    color: white;
+    padding: 10px 20px;
+    display: block;
+}
+
+
+.dropdown li a:hover {
+    background-color: #555;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+
+#categories-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    padding: 10px 0;
+    min-width: 200px;
+    z-index: 1000;
+    display: none;
+}
+
+#categories-dropdown li {
+    padding: 10px;
+}
+
+#categories-dropdown li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+#categories-dropdown li a:hover {
+    background-color: #555;
+}
+
+
+@media (max-width: 768px) {
+
+    .nav-main form {
+        display: none;
+    }
+    .nav-main ul li:nth-child(3) {
+        display: block;
+    }
+
+
+    .nav-center {
+        flex-direction: column;
+        display: none;
+    }
+
+    .nav-center.show {
+        display: flex;
+    }
+
+    
+    .nav-center ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-center ul li {
+        width: 100%;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    #categories-toggle + #categories-dropdown {
+        display: block;
+    }
+
+    
+    #categories-dropdown {
+        position: static;
+        background-color: #333;
+        padding: 10px 0;
+        min-width: 200px;
+        display: none;
+    }
+
+    #categories-dropdown.show-dropdown {
+        display: block;
+    }
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información de envio</title>
+    <link rel="stylesheet" href="/css/views/formDirection.css">
+    <script src="https://kit.fontawesome.com/58e42bf76d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <%- include('./partials/header') %>
+
+    <main>
+        <section class="justify-center items-center my-3 font-bold">
+            <h1 class="text-lg sm:text-2xl text-center">Información de envio</h1>
+            <section>
+                | <div class="bg-gray-100 p-6 rounded-lg shadow-md ">
+                    <h2 class="text-lg font-bold mb-4">Información de Envío</h2>
+                    <div class="mb-4">
+                        <label for="name" class="block text-sm font-medium text-gray-700">Nombres y Apellidos</label>
+                        <input type="text" id="name"
+                            class="mt-1 p-2 w-full border rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                    </div>
+                    <div class="mb-4">
+                        <label for="address" class="block text-sm font-medium text-gray-700">Dirección</label>
+                        <input type="text" id="address"
+                            class="mt-1 p-2 w-full border rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                    </div>
+                    <div class="mb-4">
+                        <label for="city" class="block text-sm font-medium text-gray-700">Ciudad</label>
+                        <input type="text" id="city"
+                            class="mt-1 p-2 w-full border rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                    </div>
+                    <div class="mb-4">
+                        <label for="region" class="block text-sm font-medium text-gray-700">Región</label>
+                        <input type="text" id="region"
+                            class="mt-1 p-2 w-full border rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                    </div>
+                    <div class="mb-4">
+                        <label for="postalcode" class="block text-sm font-medium text-gray-700">Código postal</label>
+                        <input type="text" id="postalcode"
+                            class="mt-1 p-2 w-full border rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                    </div>
+                    <ul class="bg-gray-200 p-4 rounded-lg">
+                        <li class="text-sm">Subtotal: $30400</li>
+                        <li class="text-sm">IVA: $5776</li>
+                        <li class="text-sm font-bold">Total: 36176</li>
+                    </ul>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <%- include('./partials/footer') %>
+</body>
+
+</html>

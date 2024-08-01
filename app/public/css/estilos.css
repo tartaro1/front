@@ -1,0 +1,42 @@
+body {
+    font-family: sans-serif;
+  }
+  
+  .container {
+    width: 500px;
+    margin: 20vh 63vh;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #f8f8f8;
+  }
+  
+  .success-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #4CAF50;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    margin: 5px 34.5vh;
+  }
+  
+  .success-icon i {
+    font-size: 16px;
+  }
+  
+  .success-message {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 15vh;
+  }
+
+  .success-message p {
+    font-size: 18px;
+    font-weight: lighter;
+    margin: 10px 0vh;
+
+  }

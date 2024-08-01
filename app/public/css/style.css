@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+.navbar-brand {
+    font-family: 'Lemon';
+    color: #F86913;
+    font-size: 30px;
+}
+.sidebar {
+	min-width: 250px;
+	max-width: 250px;
+	height: 100vh;
+	padding: 1rem;
+	position: relative;
+}
+.sidebar-icon {
+	font-size: xx-large;
+}
+.sidebar-icon::before{
+	vertical-align: baseline;
+	color: #000;
+}
+.sidebar-item {
+	display: flex;
+    place-items: center;
+}
+.content {
+	flex-grow: 1;
+	padding: 1rem;
+}
+.user-list-item {
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+.user-list-item div,
+.user-list-item span {
+    margin-right: 20px;
+}
+
+.icon-button button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.icon-button button:hover {
+    opacity: 0.8;
+}
+/* Ajustes para los iconos de acción */
+.action-icon {
+	margin-left: 10px;
+}
+.logout-item {
+	display: flex;
+    align-items: center;
+	margin-top: 50px;
+}
+[class^="bi-"]::before, [class*=" bi-"]::before {
+	display: contents;
+}
+.search-and-add {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.search-bar {
+	width: 100%;
+    text-align: -webkit-center;
+}
+.input-group {
+	width: 40%;
+    position: relative;
+}
+.add-user-btn {
+	font-size: 1.6rem;
+}
+.edit-user-btn {
+	font-size: 1.6rem;
+	width: 50px;
+    height: 50px;
+	padding: 0;
+}
+.delete-user-btn, .info-user-btn {
+	width: 50px;
+	height: 50px;
+}
+.form-control {
+	border: 1px solid #000;
+}
+.bi-search {
+	position: absolute;
+    right: 10px;
+    top: 7px;
+}
+.title-user {
+	font-size: xx-large;
+}
+.btn-save {
+	width: 45%;
+	color: #fff;
+	background-color: #ff6916;
+}
+.btn-close-modal {
+    border: none;
+}
+.btn-close-modal:hover {
+    border: none;
+	background-color: transparent;
+	color:#000;
+}
+.btn-close-modal::before {
+	font-size: 2.5rem;
+}
+.modal-header {
+	padding-bottom: 0;
+	border-bottom: none;
+}
+.btn-warning {
+	background-color: #FE6C00;
+}
+.btn-danger {
+	background-color: #FF0000;
+}
+.btn-add-image {
+	position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 50px;
+    height: 50px;
+}
+
+.info-product-final{
+	width: 50%;
+    border: 1px solid #000;
+    display: grid;
+}
+.web-name{
+	color: #F86913;
+	font-family: lemon;
+}
+a{
+	text-decoration: none;
+	color: #000;
+}
+.menu {
+	margin-top: -10px;
+	margin-bottom: -10px;
+	margin-left: -10px;
+	box-shadow: 0px 0px 40px 0px #9e9e9e;
+}
+.nav-link{
+	margin-top: 10px;
+	border-radius: 10px;
+	transition: .5s;
+}
+.order {
+	max-width: none;
+	width: 60%;
+}
+.nav-link:hover{
+	background: #bbb8b8;
+	transition: .5s;
+}
+
+.imagen > img{
+	height: 70px;
+	width: 130px;
+	border-radius: 10px;
+}
+tr > .contrasena{
+	max-width: 150px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+@media (max-width: 968px) {
+	.sidebar {
+		min-width: 100px;
+		padding: 5px!important;
+	}
+	.sidebar-icon {
+		font-size: 15px;
+	}
+	.sidebar-item {
+		font-size: 15px
+	}
+	.titles-menu {
+		font-size: smaller;
+	}
+	.web-name {
+		font-size: 20px;
+	}
+	.title-user {
+		font-size: 15px;
+		padding: 0;
+		max-width: 50%!important;
+	}
+	.user-email {
+		margin-left: 10px;
+	}
+	.user-phone {
+		margin-left: 10px;
+	}
+	.user-list-item {
+		padding-bottom: 5px;
+		padding-right: 10px;
+	}
+	.add-user-btn {
+		font-size: 1rem;
+	}
+	.input-group {
+	    width: 90%;
+	}
+	.btn-add-image {
+	    top: 2%;
+		left: 19%;
+	}
+	.mobile-table-report {
+	    display: block;
+	}
+	.img-report {
+		width: 100%;
+	}
+	.img-product-report {
+		place-content: center;
+	}
+	.justify-mobile { 
+		justify-content: center!important;
+	}
+	.icon-alarm-mobile {
+		font-size: 30px;
+	}
+	.img-product-edit-p {
+		width: 65px;
+		height: 65px;
+	}
+	.table-price-p {
+		display: block;
+	}
+	.col-mobile-price {
+		max-width: 100%;
+		padding: 0;
+	}
+	.info-product-final {
+		width: 100%;
+	}
+	.btn-edit-p {
+		width: 85%!important;
+	}
+}

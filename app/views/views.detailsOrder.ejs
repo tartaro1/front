@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head', {title:'Dash-OrdersDetails'}) %>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body>
+    <script>
+        const logOut = () => {
+            sessionStorage.clear();
+            window.location.href= "/"
+        }
+    </script>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2 position-fixed h-100 p-0" style="height: 100vh;">
+                <%- include('./partials/header-dash') %>
+            </div>
+            <div class="col-sm-10 contentDelete p-0 position-absolute top-0 end-0">
+                <div class="container mt-4">
+                    <div class="row">
+                        <span class="col-10 title-user">Reportes</span>
+                        <div class="col-2 p-1 sidebar-item">
+                            <i class="sidebar-icon bi bi-person-circle"></i>
+                            <span style="margin-left: 10px">Emmanuel</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row align-items-start mobile-table-report">
+                        <div class="vDiarias">
+                            <span class="title-user">Ventas Diarias</span>
+                        </div>
+                    </div>
+                    <div class="row align-items-start mobile-table-report">
+                        <div class="cantidadV">
+                            <span class="title-user">Cantidad Ventas</span>
+                        </div>
+                    </div>
+                    <div class="row align-items-start mobile-table-report">
+                        <div class="ingresos">
+                            <span class="title-user">Ingresos Generales</span>
+                        </div>
+                    </div>
+                    <div class="row align-items-start mobile-table-report">
+                        <div class="col mt-5" style="text-align-last: center; text-align: -webkit-center">
+                            <span class="col-10 title-user" style="padding-left: 0">Productos Vendidos</span>
+                            <img width="55%" height="auto" class="img-report"
+                                src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmexico.unir.net%2Fwp-content%2Fuploads%2Fsites%2F6%2F2022%2F05%2Fgrafico-de-barras.jpg&f=1&nofb=1&ipt=528046bceeecbd19ceee01042f4a2f651e02895a65cc6b9ab2cfb90004fb3e13&ipo=images" />
+                            <div class="form-group col-md-4 mt-4">
+                                <select id="inputState" class="form-control">
+                                    <option selected disabled>Cadena</option>
+                                    <option>Éxito</option>
+                                    <option>Carulla</option>
+                                    <option>Metro</option>
+                                    <option>D1</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col" style="text-align: -webkit-center">
+                            <!-- Barra de búsqueda -->
+                            <div class="container mt-5">
+                                <div class="search-and-add">
+                                    <!-- Barra de búsqueda -->
+                                    <div class="search-bar">
+                                        <div class="input-group" style="width: 100%">
+                                            <!-- <input type="search" class="form-control rounded-pill alert-dark" aria-label="Buscar usuario"><i class="bi bi-search"></i> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ventas">
+                                <% if (detailsOrders && detailsOrders.length> 0) { %> <%
+                                        detailsOrders.forEach(detailOrder=> { %>
+                                        <div class="row rounded shadow mt-3 img-product-report" style="
+                      width: 80%;
+                      align-items: center;
+                      border: 1px solid #000;
+                    ">
+                                            <img width="100" height="100" src="<%= detailOrder.imagen %>" />
+                                            <div class="" style="margin-left: 10px">
+                                                <div>
+                                                    <span class="info-product p-1">
+                                                        <%= detailOrder.NombreProducto %>
+                                                    </span>
+                                                    <span class="info-product p-1">Cantidad: <%= detailOrder.Cantidad %>
+                                                            </span>
+                                                </div>
+                                                <div>
+                                                    <span class="info-product p-1">Precio: <%= detailOrder.PrecioVenta
+                                                            %></span>
+                                                    <a href="ReportesIndividuales.html"><span
+                                                            style="text-decoration: underline"
+                                                            class="info-product p-1">Cadena: <%=
+                                                                detailOrder.nombre_proveedor %></span></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <% }); %>
+                                            <% } else { %>
+                                                <p>No se encontraron detalles de pedidos.</p>
+                                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/details.js"></script>
+    <%- include('./partials/scripts') %>
+</body>
+
+</html>

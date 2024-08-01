@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informacón | Producto</title>
+    <link rel="stylesheet" href="./css/views/product.css">
+    <script src="https://kit.fontawesome.com/58e42bf76d.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-main">
+            <a href="index.html">
+                <img src="./img/logo2.png" alt="">
+            </a>
+            <form action="">
+                <input type="text" placeholder="Buscar contenido...">
+            </form>
+            <ul>
+                <li><a href=""><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li><a href="" class="vender">Vender</a></li>
+                <li><a href="#" id="menu-toggle" class="menu-toggle"><i class="fas fa-bars"></i></a></li>
+            </ul>
+        </div>
+        <div class="nav-center" id="nav-center">
+            <ul class="list-items">
+                <li id="categories-toggle">
+                    <a href="#">Categorias</a>
+                    <ul class="dropdown" id="categories-dropdown">
+                        <li><a href="#">Tecnologia</a></li>
+                        <li><a href="#">Mercado</a></li>
+                        <li><a href="#">Comida rápida</a></li>
+                        <li><a href="#">Limpieza</a></li>
+                        <li><a href="#">Tendencia</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Ofertas</a></li>
+                <li><a href="#">Supermercado</a></li>
+                <li><a href="search.html">Buscar</a></li>
+            </ul>
+            <ul class="list-links">
+                <li><a href="signup.html">Crea tu cuenta</a></li>
+                <li><a href="login.html">Ingresar</a></li>
+                <li><a href="#">Ayuda</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="mx-2 sm:mx-5 md:mx-7 lg:mx-10 flex flex-col">
+        <section class="justify-center items-center my-3 font-bold">
+            <h1 class="text-lg sm:text-2xl text-center">Detalles del producto</h1>
+            <section class="flex flex-wrap sm:flex-nowrap">
+                <article class="bg-slate-100 ">
+                    <figure>
+                        <img src="/img/image.jpg" alt="">
+                    </figure>
+                </article>
+                <article class="flex flex-col justify-start sm:w-6/12 p-5">
+                    <h2 class="text-lg sm:text-2xl text-start">Hamburguesa</h2>
+                    <div class="flex justify-between">
+                        <div class="font-bold text-gray-800 mb-4">
+                            <h2 class="text-5xl">$20.000</h2>
+                            <p class="my-3 text-orange-500">In Stock</p>
+                        </div>
+                        <div class="flex flex-col">
+                            <div class="">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                        </div>
+                            <p>2 reviews</p>
+                        </div>
+                    </div>
+                    <p cclass="text-gray-600 text-center mb-6">Lorem ipsum dolor sit amet consectetur. Egestas auctor hac nisi nulla scelerisque nunc volutpat diam.</p>
+                    <div class="flex items-center justify-between space-x-4">
+                        <div class="flex items-center">
+                          <span class="text-gray-600 font-medium">Quantity:</span>
+                          <div class="flex items-center space-x-2">
+                            <button class="bg-gray-200 text-gray-600 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded-md px-2 py-1">
+                              -
+                            </button>
+                            <span class="text-gray-900 font-medium">1</span>
+                            <button class="bg-gray-200 text-gray-600 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded-md px-2 py-1">
+                              +
+                            </button>
+                          </div>
+                        </div>
+                        <button class="bg-orange-500 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-opacity-50 rounded-md px-4 py-2 text-white font-medium">
+                          <svg class="w-5 h-5 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                          Buy Now
+                        </button>
+                      </div>
+                    <ul class="flex flex-col">
+                        <div class="flex justify-start space-x-4">
+                            <li>Código de barras: </li>
+                            <p class="text-gray-700">1025153</p>
+                        </div>
+                        <div class="flex justify-start space-x-4">
+                            <li>Categorias: </li>
+                            <p class="text-gray-700">Comida</p>
+                        </div>
+                        <div class="flex justify-start space-x-4">
+                            <li>Tags: </li>
+                            <p class="text-gray-700">#Food #Hamburguer #service</p>
+                        </div>
+                    </ul>
+                </article>
+            </section>
+        </section>
+    </main>
+
+
+    <footer class="bg-secondary text-white py-10 mt-10 ">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 ">
+                <nav>
+                    <h3 class="text-white text-lg font-bold mb-4 ">Información</h3>
+                    <ul>
+                        <li class="mb-2 "><a class="hover:text-white transition-colors duration-200 "
+                                href="">Condiciones de uso
+                            </a></li>
+                        <li class="mb-2 "><a class="hover:text-white transition-colors duration-200 " href="">Aviso de
+                                privicidad </a></li>
+                        <li class="mb-2 "><a class="hover:text-white transition-colors duration-200 " href="">Ayuda </a>
+                        </li>
+                    </ul>
+                </nav>
+                <nav>
+                    <h3 class="text-white text-lg font-bold mb-4 ">Legal</h3>
+                    <ul>
+                        <li class="mb-2 "><a class="hover:text-white transition-colors duration-200 " href="">Terminos y
+                                condiciones </a></li>
+                        <li class="mb-2 "><a class="hover:text-white transition-colors duration-200 " href="">Todos los
+                                derechos reservados </a></li>
+                        <li class="mb-2 "><a class="hover:text-white transition-colors duration-200 " href="">Tartaro
+                                INC</a></li>
+                    </ul>
+                </nav>
+                <nav>
+                    <h3 class="text-white text-lg font-bold mb-4 ">Redes sociales</h3>
+                    <ul class="flex space-x-4">
+                        <li class="mb-2 "><a href=""><i class="fab fa-facebook fa-lg"></i></a></li>
+                        <li class="mb-2 "><a href=""><i class="fab fa-twitter fa-lg"></i></a></li>
+                        <li class="mb-2 "><a href=""><i class="fab fa-instagram fa-lg"></i></a></li>
+                    </ul>
+                </nav>
+                <nav>
+                    <h3 class="text-white text-lg font-bold mb-4 ">Contacto</h3>
+                    <ul>
+                        <li class="mb-2 "><a class="hover:text-white transition-colors duration-200 "
+                                href="mailto:danirojasbermudez20@gmail.com">danirojasbermudez20@gmail.com</a></li>
+                        <li class="mb-2 "><a class="hover:text-white transition-colors duration-200 "
+                                href="tel:+573052338332"> +57
+                                305-233-8332</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+            <div class="mt-8 text-center border-t border-gray-700 pt-4">
+                <p>&copy; 2024 Tartaro Inc. Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

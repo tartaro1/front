@@ -1,0 +1,69 @@
+<table class="table table bordered table-striped">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Celular</th>
+            <th scope="col">Cedula</th>
+            <th scope="col">Direccion</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Contrasena </th>
+            <th scope="col">Estado</th>
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% users.forEach(user=> { %>
+            <tr class="user-list-item">
+                <td class="id">
+                    <%= user.ID_Usuario %>
+                </td>
+                <td class="nombre">
+                    <%= user.Nombre %>
+                </td>
+                <td class="celular">
+                    <%= user.Celular %>
+                </td>
+                <td class="cedula">
+                    <%= user.Cedula %>
+                </td>
+                <td class="direccion">
+                    <%= user.Direccion %>
+                </td>
+                <td class="correo">
+                    <%= user.Correo%>
+                </td>
+                <td class="contrasena">
+                    <%= user.Contrasena %>
+                </td>
+                <td class="estado">
+                    <%= user.EstadoUsuario%>
+                </td>
+                <td>
+                    <div class="rounded icon-button">
+                        <button class="btn btn-warning edit-user-btn" type="button"
+                            data-bs-toggle="modal" data-bs-target="#exampleEditUserModal">
+                            <i class="sidebar-icon bi bi-pencil-fill"></i>
+                        </button>
+                    </div>
+                </td>
+                <td>
+                    <div class="rounded icon-button ms-1 remove">
+                        <button type="button" class="btn btn-danger delete-user-btn"
+                            data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <i class="sidebar-icon bi bi-x"></i>
+                        </button>
+                    </div>
+                </td>
+                <td>
+                    <div class="rounded icon-button ms-1 remove">
+                        <button type="button" class="btn btn-info info-user-btn"
+                            data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+                            <i class="fa-regular fa-file" style="background-image: url(/img/file-regular.svg);"></i>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        <% }); %>
+    </tbody>
+</table>

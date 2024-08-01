@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar productos | Tartaro</title>
+    <link rel="stylesheet" href="./css/views/search.css">
+    <script src="https://kit.fontawesome.com/58e42bf76d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <%- include('./partials/header') %>
+
+    <main class="flex flex-grow">
+        <!-- Barra Lateral con Filtros -->
+        <aside class="w-64 h-auto p-4 sticky top-0 self-start">
+            <h2 class="text-xl font-bold mb-4">Categorías</h2>
+            <!-- Categoría 1 -->
+            <div class="category mb-2">
+                <div class="flex justify-between items-center cursor-pointer dropdown-toggle">
+                    <label for="tendencia" class="text-gray-700">Tendencia</label>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="dropdown-content hidden pl-4">
+                    <label class="flex justify-between mb-2">
+                        <span>Más vendidos</span>
+                        <input type="checkbox" class="filter-checkbox subcategory-trend" data-category="subcategoria1">
+                    </label>
+                </div>
+            </div>
+            <!-- Categoría 2 -->
+            <div class="category mb-2">
+                <div class="flex justify-between items-center cursor-pointer dropdown-toggle">
+                    <label for="comida" class="text-gray-700">Comida</label>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="dropdown-content hidden pl-4">
+                    <label class="flex justify-between mb-2">
+                        <span>Grano</span>
+                        <input type="checkbox" class="filter-checkbox" data-category="Grano">
+                    </label>
+                    <label class="flex justify-between mb-2">
+                        <span>Carnes</span>
+                        <input type="checkbox" class="filter-checkbox" data-category="Carnes">
+                    </label>
+                    <label class="flex justify-between mb-2">
+                        <span>Lácteos</span>
+                        <input type="checkbox" class="filter-checkbox" data-category="Lacteos">
+                    </label>
+                    <label class="flex justify-between mb-2">
+                        <span>Frutas</span>
+                        <input type="checkbox" class="filter-checkbox" data-category="Frutas">
+                    </label>
+                    <label class="flex justify-between mb-2">
+                        <span>Bebidas</span>
+                        <input type="checkbox" class="filter-checkbox" data-category="bebidas">
+                    </label>
+                    <label class="flex justify-between mb-2">
+                        <span>Enlatados </span>
+                        <input type="checkbox" class="filter-checkbox" data-category="Enlatados">
+                    </label>
+                    <label class="flex justify-between mb-2">
+                        <span>Panes</span>
+                        <input type="checkbox" class="filter-checkbox" data-category="panes">
+                    </label>
+                    <label class="flex justify-between mb-2">
+                        <span>Verduras</span>
+                        <input type="checkbox" class="filter-checkbox" data-category="Verduras">
+                    </label>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <div class="flex-grow p-6">
+            <div class="flex items-center justify-center mt-8 mb-4">
+                <input id="searchInput" type="text" placeholder="Buscar productos..."
+                    class="w-full max-w-md px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+            </div>
+
+            <div id="lista-productos" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Productos -->
+            </div>
+        </div>
+    </main>
+
+    <%- include('./partials/footer') %>
+    <script src="js/menu.js"></script>
+    <script src="js/filter.js"></script>
+    <script src="/js/search.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <%- include('./partials/head', {title:'Dash-Products'}) %>
+  <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+  <script>
+    const logOut = () => {
+            sessionStorage.clear();
+            window.location.href= "/"
+        };
+  </script>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-2 position-fixed h-100 p-0" style="height: 100vh;">
+        <%- include('./partials/header-dash') %>
+      </div>
+      <div class="col-sm-10 contentDelete p-0 position-absolute top-0 end-0">
+        <!-- Barra de búsqueda -->
+        <div class="container mt-4">
+          <div class="row">
+            <span class="col-10 title-user">Lista de Productos</span>
+            <div class="col-2 p-1 sidebar-item"><i class="sidebar-icon bi bi-person-circle"></i> <span
+                style="margin-left: 10px;">Emmanuel</span></div>
+          </div>
+
+          <div class="search-and-add">
+            <div class="rounded icon-button ms-1 remove">
+              <button type="button" class="btn btn-info info-user-btn"
+                  data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+                  <i class="fa-regular fa-file" style="background-image: url(/img/file-regular.svg);"></i>
+              </button>
+          </div>
+            <!-- Barra de búsqueda -->
+            <div class="search-bar">
+              <div class="input-group">
+                <input type="search" class="form-control rounded-pill alert-dark browse"
+                  placeholder="Buscar por categoria"><i class="bi bi-search"></i>
+              </div>
+            </div>
+
+            <!-- Botón de agregar usuario -->
+            <button class="btn btn-warning add-user-btn" style="color:#fff" type="button" data-bs-toggle="modal"
+              data-bs-target="#exampleAddUserModal""><i class=" bi bi-plus"></i></button>
+          </div>
+        </div>
+
+        <!-- Modal Añadir Producto-->
+        <div class="modal fade" id="exampleAddUserModal" tabindex="-1" aria-labelledby="exampleEditUserModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title fs-5" id="exampleEditUserModalLabel">Agregar Producto</h4>
+                <button type="button" class="btn btn-outline-dark bi-x btn-close-modal" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+              </div>
+              <div class="modal-body" style="padding-top: 0;">
+                <form>
+                  <div class="container">
+                    <div class="row align-items-start">
+                      <div class="col" style="margin-top: 15px;">
+                        <div style="text-align: center;position:relative;" class="mb-3 rounded">
+                          <div class="rounded" style="width:200px;height:200px;border:1px solid #ccc;">
+                          </div>
+                          <input class="form-control url mt-2" type="text" id="formFile" placeholder="URL..."></input>
+                        </div>
+                        <div class="mb-3">
+                          <label for="recipient-name" class="col-form-label">Marca</label>
+                          <input type="text" class="form-control  marca alert-dark rounded" id="recipient-name">
+                          <label for="recipient-name" class="col-form-label">Proveedor</label>
+                          <input type="number" class="form-control proveedor alert-dark rounded" id="recipient-name">
+                          <label for="recipient-name" class="col-form-label">calificacion</label>
+                          <input type="number" class="form-control calificacion alert-dark rounded" id="recipient-name">
+                          <label for="recipient-name" class="col-form-label">Disponibilidad</label>
+                          <input type="number" class="form-control disponibilidadalert-dark rounded" id="recipient-name">
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="mb-1">
+                          <label for="recipient-name" class="col-form-label">Nombre</label>
+                          <input type="text" class="form-control nombre alert-dark rounded" id="recipient-name"
+                            placeholder="Nombre">
+                        </div>
+                        <div class="mb-1">
+                          <label for="recipient-name" class="col-form-label">Descripción</label>
+                          <textarea class="form-control alert-dark descripcion rounded" id="exampleFormControlTextarea1"
+                            rows="3"></textarea>
+                        </div>
+                        <div class="mb-1">
+                          <label for="recipient-name" class="col-form-label">Precio</label>
+                          <input type="number" class="form-control precio alert-dark rounded" id="recipient-name"
+                            placeholder="$">
+                        </div>
+                        <div class="mb-2">
+                          <label for="recipient-name" class="col-form-label">categoria</label>
+                          <input type="number" class="form-control categoria alert-dark rounded" id="recipient-name"
+                            placeholder="0">
+                        </div>
+                        <div class="mb-2">
+                          <label for="recipient-name" class="col-form-label">Stock</label>
+                          <input type="number" class="form-control stock alert-dark rounded" id="recipient-name"
+                            placeholder="0">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+                <div style="text-align: center;">
+                  <button type="button" class="btn btn-warning btn-save" data-bs-dismiss="modal">Guardar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lista de usuarios -->
+        <div class="container">
+          <%- include('./components/product-table') %>
+        </div>
+        <!-- Modal Editar Usuario -->
+        <div class="modal fade" id="exampleEditUserModal" tabindex="-1" aria-labelledby="exampleEditUserModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title fs-5" id="exampleEditUserModalLabel">Editar Producto</h4>
+                <button type="button" class="btn btn-outline-dark bi-x btn-close-modal" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+              </div>
+              <div class="modal-body" style="padding-top: 0;">
+                <form>
+                  <div class="container">
+                    <div class="row align-items-start">
+                      <div class="col" style="margin-top: 15px;">
+                        <div style="text-align: center;position:relative;" class="mb-3 rounded">
+                          <div class="rounded" style="width:200px;height:200px;border:1px solid #ccc;">
+                            <button class="btn edit-user-btn" type="button" data-bs-toggle="modal"
+                              data-bs-target="#exampleAddUserModal"><i
+                                class="sidebar-icon bi bi-card-image"></i></button>
+                          </div>
+                        </div>
+                        <input class="form-control urlEdit mt-2" type="text" id="recipient-name"
+                          placeholder="URL...">
+                        <div class="mb-3">
+                          <label for="recipient-name" class="col-form-label">Marca</label>
+                          <input type="text" class="form-control  marcaEdit alert-dark rounded" id="recipient-name">
+                          <label for="recipient-name" class="col-form-label">Proveedor</label>
+                          <input type="number" class="form-control proveedorEdit alert-dark rounded"
+                            id="recipient-name">
+                          <label for="recipient-name" class="col-form-label">calificacion</label>
+                          <input type="number" class="form-control calificacionEdit alert-dark rounded"
+                            id="recipient-name">
+                            <label for="recipient-name" class="col-form-label">Disponibilidad</label>
+                          <input type="number" class="form-control disponibilidadEdit alert-dark rounded"
+                            id="recipient-name">
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="mb-1">
+                          <label for="recipient-name" class="col-form-label">Nombre</label>
+                          <input type="text" class="form-control nombreEdit alert-dark rounded" id="recipient-name"
+                            placeholder="Nombre">
+                        </div>
+                        <div class="mb-1">
+                          <label for="recipient-name" class="col-form-label">Descripción</label>
+                          <textarea class="form-control alert-dark descripcionEdit rounded"
+                            id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <div class="mb-1">
+                          <label for="recipient-name" class="col-form-label">Precio</label>
+                          <input type="number" class="form-control precioEdit alert-dark rounded" id="recipient-name"
+                            placeholder="$">
+                        </div>
+                        <div class="mb-2">
+                          <label for="recipient-name" class="col-form-label">categoria</label>
+                          <input type="number" class="form-control categoriaEdit alert-dark rounded" id="recipient-name"
+                            placeholder="0">
+                        </div>
+                        <div class="mb-2">
+                          <label for="recipient-name" class="col-form-label">Stock</label>
+                          <input type="number" class="form-control stockEdit alert-dark rounded" id="recipient-name"
+                            placeholder="0">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+                <div style="text-align: center;">
+                  <button type="button" class="btn btn-warning btn-save-edit" data-bs-dismiss="modal">Guardar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Modal Eliminar Usuario -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+          aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header" style="align-self: center;padding-bottom:20px">
+                <h5 class="modal-title fs-5" id="staticBackdropLabel">¿Deseas eliminar "Lomo de res"?</h5>
+              </div>
+              <div style="text-align: center;padding-bottom: 20px;">
+                <button type="button" class="btn btn-warning accept" data-bs-dismiss="modal"
+                  style="color:white">Aceptar</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Rechazar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/js/products.js"></script>
+  <%- include('./partials/scripts') %>
+</body>
+
+</html>

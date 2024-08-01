@@ -1,0 +1,55 @@
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Imagen</th>
+            <th scope="col">Producto</th>
+            <th scope="col">ID_Categoria</th>
+            <th scope="col">Marca</th>
+            <th scope="col">ID_Proveedor</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">PrecioVenta</th>
+            <th scope="col">Vendidos</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if (Array.isArray(products)) { %>
+            <% products.forEach(product => { %>
+                <tr class="user-list-item" data-id="<%= product.id %>">
+                    <td class="id"><%= product.id %></td>
+                    <td class="imagen"><img src="<%= product.imagen %>" alt="Producto" style="max-width: 100px;"></td>
+                    <td class="nombre"><%= product.NombreProducto %></td>
+                    <td class="categoria"><%= product.ID_Categoria %></td>
+                    <td class="marca"><%= product.Marca %></td>
+                    <td class="proveedor"><%= product.ID_Proveedor %></td>
+                    <td class="descripcion"><%= product.Descripcion %></td>
+                    <td class="precio"><%= product.PrecioVenta %></td>
+                    <td class="disponibilidad"><%= product.Vendidos %></td>
+                    <td class="stock"><%= product.Stock %></td>
+                    <td>
+                        <div class="rounded icon-button">
+                            <button class="btn btn-warning edit-user-btn" type="button" data-bs-toggle="modal"
+                                data-bs-target="#exampleEditUserModal">
+                                <i class="sidebar-icon bi bi-pencil-fill"></i>
+                            </button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="rounded icon-button ms-1 remove">
+                            <button type="button" class="btn btn-danger delete-user-btn" data-bs-toggle="modal"
+                                data-bs-target="#staticBackdrop">
+                                <i class="sidebar-icon bi bi-x"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            <% }); %>
+        <% } else { %>
+            <tr>
+                <td colspan="11">No se encontraron productos.</td>
+            </tr>
+        <% } %>
+    </tbody>
+</table>

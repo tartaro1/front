@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio Tartaro | Bienvenido</title>
+    <link rel="stylesheet" href="/css/views/index.css">
+    <script src="https://kit.fontawesome.com/58e42bf76d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <%- include('./partials/header-ini') %>
+    <header class="slider-container">
+        <div class="slider relative">
+            <div class="slide active" style="background-image: url('img/header/header1.jpg');">
+                <div class="slide-content">
+                    <h2 class="text-4xl font-bold">Tu Portal de Compras Inteligentes en Colombia</h2>
+                    <p class="mt-2 text-xl">Explora, Compara y Ahorra en Productos de Todos los Mercados</p>
+                </div>
+            </div>
+            <div class="slide next" style="background-image: url('img/header/header2.jpg');">
+                <div class="slide-content">
+                    <h2 class="text-4xl font-bold">Descubre Ofertas que Redefinen el Ahorro</h2>
+                    <p class="mt-2 text-xl">Encuentra las Mejores Promociones de forma Rápida y Eficaz</p>
+                </div>
+            </div>
+            <div class="slide next" style="background-image: url('img/header/header3.jpg');">
+                <div class="slide-content">
+                    <h2 class="text-4xl font-bold">Tu Aliado Perfecto para Comprar de Forma Inteligente</h2>
+                    <p class="mt-2 text-xl">Descubre Productos de Calidad y Ofertas Que No Puedes Perder</p>
+                </div>
+            </div>
+            <!-- Botones de flecha -->
+            <button id="prev" class="arrow-btn">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button id="next" class="arrow-btn">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-center items-start">
+            <% products.forEach(product=> { %> 
+                <div class="product-card bg-white p-4 rounded-lg shadow-lg" data-id="<%= product.id %>">
+                    <img src="<%= product.imagen %>" alt="Producto"
+                        class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-lg font-bold mb-2"><%= product.NombreProducto %></h3>
+                    <p class="text-gray-700 mb-2"> <%= product.Descripcion %></p>
+                    <p class="text-orange-600 font-bold mb-4">$<%= product.PrecioVenta %></p>
+                    <div class="flex space-x-2">
+                        <a class="bg-orange-600 text-white py-2 px-4 rounded-lg ver">Ver</a>
+                        <a href="#" class="bg-green-600 text-white py-2 px-4 rounded-lg">Comprar</a>
+                    </div>
+                </div>
+                <% }); %>
+        </section>
+
+    </main>
+    <%- include('./partials/footer') %>
+    <script src="/js/menu.js"></script>
+    <script src="/js/slider.js"></script>
+    <script>
+        const btnVer = document.querySelectorAll(".ver");
+        btnVer.forEach(btn => {
+            btn.addEventListener("click", (e) => {
+                const parent = e.target.closest(".product-card");
+                const id = parent.getAttribute("data-id");
+                window.location.href = `/producto/${id}`;
+            })
+        })
+        const nombre = localStorage.getItem('nombre');
+        console.log(nombre);
+        const cuenta = document.querySelector(".cuenta");
+        cuenta.innerHTML = nombre;
+    </script>
+</body>
+</html>

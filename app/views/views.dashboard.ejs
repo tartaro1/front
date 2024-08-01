@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head', {title:'Dashboard-Home'}) %>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <script>
+        const token = sessionStorage.getItem('token');
+        if (token == "" || token == null) {
+            window.location.href = "/"
+        }
+        fetch("https://ms-backend-tartaro.onrender.com/users/oauth", {
+            method: "POST",
+            headers: {
+                "content-Type": "application/json",
+                "x-access-token": token
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.error) {
+                    console.error(data.error);
+                }
+            })
+        const logOut = () => {
+            sessionStorage.clear();
+            window.location.href= "/"
+        };
+    </script>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2">
+                <%- include('./partials/header-dash') %>
+            </div>
+            <div class="col-sm-10">
+                <div class=" d-flex justify-content-between mb-3">
+                    <div class="p-2 "></div>
+                    <div class="p-2 ">
+                        <h1 class="text-center ">Panel de Usuario</h1>
+                    </div>
+                    <div class="col-2 p-1 sidebar-item"><i class="sidebar-icon bi bi-person-circle"></i> <span
+                            style="margin-left: 10px;">Emmanuel</span></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title">Quienes Somos</h5>
+                            </div>
+                            <img src="./img/imagen1.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+
+                                <p class="card-text">Terminos y Condiciones <a href="#"
+                                        class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">TerminosyCondiciones.pdf</a>
+                                </p>
+                                <input type="file" class="btn btn-primary form-control form-control-lg" id="formFile">
+                            </div>
+                        </div>
+                        <div class="card-group ">
+                            <div class="card m-2">
+                                <img src="https://static.vecteezy.com/system/resources/previews/007/784/592/non_2x/teamwork-illustration-concept-flat-illustration-isolated-on-white-background-vector.jpg"
+                                    class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">TechXchange</h5>
+                                    <p class="card-text">Eslogan: "Donde la innovación se comercializa"
+                                        Actividad: Plataforma de comercio electrónico B2B para equipos y componentes
+                                        tecnológicos.
+                                        Fundada: 2018
+                                        Sede: Singapur</p>
+                                    <p class="card-text"><small class="text-body-secondary">Misión: Conectar a
+                                            fabricantes punteros con compradores de todo el mundo, facilitando
+                                            transacciones rápidas y seguras de productos de alta tecnología.</small></p>
+                                </div>
+                            </div>
+                            <div class="card m-2">
+                                <img src="https://img.freepik.com/vector-premium/ilustracion-concepto-trabajo-equipo_52683-52514.jpg"
+                                    class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Green Trade Co.</h5>
+                                    <p class="card-text">Eslogan: "Comercio sostenible, futuro responsable"
+                                        Actividad: Importación y distribución de productos ecológicos y de comercio
+                                        justo.
+                                        Fundada: 2015
+
+                                        Sede: Vancouver, Canadá</p>
+                                    <p class="card-text"><small class="text-body-secondary">Misión: Promover prácticas
+                                            comerciales éticas y respetuosas con el medio ambiente a través de alianzas
+                                            con productores locales y cooperativas.</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-7">
+                        <div id="carouselExampleIndicators" class="carousel slide">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="./img/image2.jpg" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./img/image3.jpg" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./img/image4.jpg" class="d-block w-100" alt="...">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <!-- <div class="d-flex align-items-stretch">
+                            <div class="p-2 bg-primary"><img src="./img/pagebkg-1.png" class="d-block w-100 ps-3 pe-3" alt="..."></div>
+                            <div class="p-2 bg-info"><div class="card" style="width: 18rem;">
+                                <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+                              </div></div>
+                            <div class="p-2 bg-danger">
+                                <img src="./img/image4.jpg" class="d-block w-100" alt="...">
+                                <div class="card" style="width: 18rem;">
+                                    <img src="..." class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div> -->
+                        <div class="card-group ">
+                            <div class="card m-2">
+                                <img src="https://static.vecteezy.com/system/resources/previews/007/784/592/non_2x/teamwork-illustration-concept-flat-illustration-isolated-on-white-background-vector.jpg"
+                                    class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">TechXchange</h5>
+                                    <p class="card-text">Eslogan: "Donde la innovación se comercializa"
+                                        Actividad: Plataforma de comercio electrónico B2B para equipos y componentes
+                                        tecnológicos.
+                                        Fundada: 2018
+                                        Sede: Singapur</p>
+                                    <p class="card-text"><small class="text-body-secondary">Misión: Conectar a
+                                            fabricantes punteros con compradores de todo el mundo, facilitando
+                                            transacciones rápidas y seguras de productos de alta tecnología.</small></p>
+                                </div>
+                            </div>
+                            <div class="card m-2">
+                                <img src="https://img.freepik.com/vector-premium/ilustracion-concepto-trabajo-equipo_52683-52514.jpg"
+                                    class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Green Trade Co.</h5>
+                                    <p class="card-text">Eslogan: "Comercio sostenible, futuro responsable"
+                                        Actividad: Importación y distribución de productos ecológicos y de comercio
+                                        justo.
+                                        Fundada: 2015
+
+                                        Sede: Vancouver, Canadá</p>
+                                    <p class="card-text"><small class="text-body-secondary">Misión: Promover prácticas
+                                            comerciales éticas y respetuosas con el medio ambiente a través de alianzas
+                                            con productores locales y cooperativas.</small></p>
+                                </div>
+                            </div>
+                            <div class="card m-2">
+                                <img src="https://images.vexels.com/media/users/3/146945/raw/709265fa82b329957191f0476edf07b9-ilustracion-del-concepto-de-trabajo-en-equipo.jpg"
+                                    class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Exports Unlimited</h5>
+                                    <p class="card-text">Eslogan: "Llevando su negocio al mundo"
+                                        Actividad: Comercio internacional de productos manufacturados.
+                                        Fundada: 2010
+                                        Sede: Miami, Florida, EE.UU.</p>
+                                    <p class="card-text"><small class="text-body-secondary">Misión: Facilitar el acceso
+                                            a nuevos mercados globales para empresas de todo tamaño mediante soluciones
+                                            integrales de exportación.</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
