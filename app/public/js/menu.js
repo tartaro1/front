@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', (event) => {
+    localStorage.clear();
     let url = document.getElementById("url").value
     let link = localStorage.setItem("url", url);
     const menuToggle = document.getElementById('menu-toggle');
